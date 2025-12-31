@@ -14,11 +14,11 @@ This project is a high-end, responsive personal portfolio designed to showcase m
 The website demonstrates core frontend fundamentals, including semantic HTML5, modern CSS3 (Flexbox/Grid), and vanilla JavaScript for dynamic routing.
 
 ## Live Deployment
-**Live URL:** [ [PASTE_YOUR_LIVE_URL_HERE] ]
+**Live URL:** [ [jesse-portfolio-pankqa5uf-jesses-projects-a56fd81b.vercel.app] ]
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 * **Styling:** Custom CSS (Space Grotesk Typography, Responsive Grid Layout)
 * **Deployment:** [Vercel]
