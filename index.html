@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesse's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">JACA</a>
+            <div class="nav-links">
+                <a href="#experience" onclick="showPage('home')">Experience</a>
+                <a href="#projects" onclick="showPage('home')">Works</a>
+                <a href="#contact" onclick="showPage('home')">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="home-page">
+        <section class="hero">
+            <h1 class="reveal-text">Jesse Agu Charles-Agu</h1>
+            <p class="subtitle">Computer Science Student at Pan-Atlantic University</p>
+            <div class="intro-text">
+                <p>I am a passionate Web Developer and Cybersecurity Specialist with hands-on experience designing, building, and securing web applications. I specialize in creating responsive, user-friendly interfaces while implementing robust backend systems that are both efficient and secure. From full-stack development of SaaS platforms, booking systems, and real-time search applications to managing databases and API integrations, I focus on delivering scalable, high-performance solutions. I combine a strong understanding of cybersecurity best practices with a practical approach to problem-solving, ensuring that the applications I build are reliable, secure, and aligned with user needs. Continuously learning and adapting to new technologies, I strive to bridge the gap between complex technical systems and seamless user experiences.</p>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <h2 class="section-label">Professional Experience</h2>
+            
+            <div class="exp-item">
+                <div class="exp-meta"><span>June 2024</span><p>Frontend Engineering</p></div>
+                <div class="exp-content">
+                    <h3>Real-Time Search / Filter App</h3>
+                    <ul>
+                        <li>Built dynamic, real-time search interfaces with instant results as users type.</li>
+                        <li>Implemented efficient filtering and sorting for large datasets to improve UX.</li>
+                        <li>Optimized performance using debounced input and minimal DOM updates.</li>
+                        <li>Designed a responsive UI compatible with desktop and mobile devices.</li>
+                        <li>Managed project code with version control (Git/GitHub) for clean collaboration.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-meta"><span>Seeptember 2024</span><p>Full-Stack Dev</p></div>
+                <div class="exp-content">
+                    <h3>Booking / Reservation System</h3>
+                    <ul>
+                        <li>Developed a full-stack booking system with real-time availability checking.</li>
+                        <li>Implemented user authentication and role-based access control for admins and clients.</li>
+                        <li>Designed secure forms and input validation to prevent double bookings and invalid data.</li>
+                        <li>Built an admin dashboard for viewing, approving, and managing reservations.</li>
+                        <li>Integrated a database backend (MySQL/PostgreSQL/MongoDB) to store bookings securely.</li>
+                        <li>Deployed the application to a live environment with reliable hosting and proper routing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-meta"><span>August 2025</span><p>SaaS Architecture</p></div>
+                <div class="exp-content">
+                    <h3>SaaS Landing Page + Backend</h3>
+                    <ul>
+                        <li>Built a conversion-focused SaaS landing page with responsive design and modern UI/UX.</li>
+                        <li>Developed a backend for user management including sign-up, login, and dashboard features.</li>
+                        <li>Implemented secure authentication, password hashing, and session management.</li>
+                        <li>Integrated database storage for user accounts, subscriptions, or captured leads.</li>
+                        <li>Connected API endpoints to enable dynamic content and interactive features.</li>
+                        <li>Deployed the full-stack application, ensuring security, performance, and scalability.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-meta"><span>October 2025</span><p>HealthTech Solution</p></div>
+                <div class="exp-content">
+                    <h3>Clinic Management System</h3>
+                    <ul>
+                        <li>Developed a full-stack web application to manage patients, appointments, and medical records.</li>
+                        <li>Implemented secure user authentication for staff, doctors, and administrators with role-based access control.</li>
+                        <li>Built appointment scheduling and patient tracking with real-time availability checks.</li>
+                        <li>Integrated a database backend to store sensitive patient information securely, following data protection principles.</li>
+                        <li>Designed responsive UI/UX to ensure usability across devices for both staff and patients.</li>
+                        <li>Implemented form validation, error handling, and notifications to improve reliability and user experience.</li>
+                        <li>Deployed the application with secure hosting, proper routing, and maintainable code structure.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="work-section">
+            <h2 class="section-label">Selected Works</h2>
+            <div class="project-grid">
+                <div class="project-card" onclick="showDetails('tooth-fixers')">
+                    <div class="image-box"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000" alt="Tooth Fixers"></div>
+                    <div class="project-info"><h3>Tooth Fixers</h3><p>Clinic Management System</p></div>
+                </div>
+                <div class="project-card" onclick="showDetails('search-app')">
+                    <div class="image-box"><img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000" alt="Search UX"></div>
+                    <div class="project-info"><h3>QuickFilter</h3><p>Real-Time Search Interface</p></div>
+                </div>
+                <div class="project-card" onclick="showDetails('booking-system')">
+                    <div class="image-box"><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1000" alt="Booking"></div>
+                    <div class="project-info"><h3>ReserveIt</h3><p>Booking System</p></div>
+                </div>
+                <div class="project-card" onclick="showDetails('saas-page')">
+                    <div class="image-box"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" alt="SaaS"></div>
+                    <div class="project-info"><h3>SaaS Core</h3><p>SaaS Landing Page</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="footer-cta">
+            <h2>NEED HELP WITH BUILDING A PROJECT OR SECURING YOUR CYBERSPACE? CONTACT ME USING THE LINKS BELOW</h2>
+            <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                <a href="mailto:charlesagujesse@gmail.com" class="cta-link">charlesagujesse@gmail.com</a>
+                
+                <a href="https://wa.me/2349071512874" target="_blank" 
+                   style="background: #000; color: #fff; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; display: inline-block;">
+                   Chat on WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <main id="details-page" style="display: none;">
+        <section class="details-container">
+            <button class="back-link" onclick="showPage('home')">← Back to index</button>
+            <div id="details-content"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jesse Agu Charles-Agu — Matric: 22120612970</p>
+    </footer>
+
+    <script>
+        const projectData = {
+            'tooth-fixers': {
+                title: "Clinic Management System",
+                problem: "Manual record-keeping resulted in data loss and scheduling conflicts at the dental clinic.",
+                features: "Secure database integration, appointment scheduling, and patient record tracking.",
+                tech: "React, Node.js, PostgreSQL.",
+                learned: "Implemented data protection principles and secure hosting for sensitive information."
+            },
+            'search-app': {
+                title: "Real-Time Search Interface",
+                problem: "Filtering large datasets was slow and lacked a modern user experience.",
+                features: "Debounced search input, instant filtering, and mobile-responsive UI.",
+                tech: "JavaScript (ES6+), HTML5, CSS Grid.",
+                learned: "Mastered performance optimization and clean UX design for dynamic data."
+            },
+            'booking-system': {
+                title: "ReserveIt Booking System",
+                problem: "Manual scheduling led to double-bookings and inefficient management.",
+                features: "Admin dashboard, role-based access, and real-time availability checks.",
+                tech: "Next.js, MongoDB, Auth.js.",
+                learned: "Handling complex backend routing and database logic."
+            },
+            'saas-page': {
+                title: "SaaS Core Landing Page",
+                problem: "Digital startups require high-performance landing pages to capture leads.",
+                features: "JWT Authentication, Lead capture forms, and interactive dashboard.",
+                tech: "Tailwind CSS, React, Express.",
+                learned: "Full-stack deployment and building conversion-focused modern UIs."
+            }
+        };
+
+        function showPage(pageId) {
+            document.getElementById('home-page').style.display = pageId === 'home' ? 'block' : 'none';
+            document.getElementById('details-page').style.display = pageId === 'details' ? 'block' : 'none';
+            window.scrollTo(0,0);
+        }
+
+        function showDetails(id) {
+            const data = projectData[id];
+            document.getElementById('details-content').innerHTML = `
+                <h1 class="details-title">${data.title}</h1>
+                <div class="details-grid">
+                    <div class="detail-item"><h3>Problem Solved</h3><p>${data.problem}</p></div>
+                    <div class="detail-item"><h3>Key Features</h3><p>${data.features}</p></div>
+                    <div class="detail-item"><h3>Tech Stack</h3><p>${data.tech}</p></div>
+                    <div class="detail-item"><h3>Outcome</h3><p>${data.learned}</p></div>
+                </div>
+            `;
+            showPage('details');
+        }
+    </script>
+</body>
+</html>
