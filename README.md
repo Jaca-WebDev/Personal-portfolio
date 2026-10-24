@@ -1,70 +1,65 @@
-# Personal Portfolio Website 
+# Jesse Charles-Agu — Portfolio
 
-### Student Information
-* **Name:** Jesse Agu Charles-Agu
-* **Matric Number:** 22120612970
-* **Course:** Final Year Frontend Project (Web Development)
-* **Institution:** Pan-Atlantic University
+Personal portfolio of **Jesse Charles-Agu**: Software Engineer · Data Analyst · Computer Scientist.
 
----
+> Building technology for real-world problems.
 
-## Project Overview
-This project is a high-end, responsive personal portfolio designed to showcase my expertise in **Web Development** and **Cybersecurity**. The design follows a minimalist "Beige & Black" aesthetic, focusing on clean typography, smooth user experience, and a professional presentation of technical projects.
+## Status
 
-The website demonstrates core frontend fundamentals, including semantic HTML5, modern CSS3 (Flexbox/Grid), and vanilla JavaScript for dynamic routing.
+The Hybrid Premium redesign lives on the `redesign/hybrid-premium` branch and replaces the earlier version of the site. Some assets are still pending (see [assets/README.md](assets/README.md)); until they are supplied the site shows clearly marked placeholders instead of project imagery, and the CV, LinkedIn and GitHub links are intentionally not shown.
 
-## Live Deployment
-**Live URL:** [ [jesse-portfolio-pankqa5uf-jesses-projects-a56fd81b.vercel.app] ]
+## Tech
 
----
+A deliberately lightweight static site with no framework and no build step.
 
-## Tech Stack
-* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-* **Styling:** Custom CSS (Space Grotesk Typography, Responsive Grid Layout)
-* **Deployment:** [Vercel]
-* **Version Control:** Git & GitHub
+- HTML5
+- CSS3 (custom properties, Grid)
+- Vanilla JavaScript: navigation, scroll reveal, and a hash-routed project detail view (`#project/<slug>`)
+- [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) via Google Fonts
+- Deployed on Vercel
+- Git and GitHub for version control
 
----
+## Project structure
 
-## Featured Experience & Projects
+```
+.
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── images/        hero and profile imagery
+│   ├── projects/      per-project screenshots
+│   ├── icons/         favicon and icons
+│   └── documents/     CV (when supplied)
+├── README.md
+└── LICENSE
+```
 
-### 1. Clinic Management System (Tooth Fixers)
-A full-stack health-tech solution designed to manage patient records and appointments.
-* **Focus:** Security, CRUD Operations, Database Management.
-* **Outcome:** Improved operational efficiency and secure data handling for patient sensitive info.
+See [assets/README.md](assets/README.md) for the expected media files and their current status.
 
-### 2. Real-Time Search / Filter App
-A performance-optimized search interface for large datasets.
-* **Focus:** UX Design, Debouncing, Performance.
-* **Outcome:** Instant, flicker-free filtering compatible with mobile and desktop.
+## Featured projects
 
-### 3. Booking / Reservation System (ReserveIt)
-A scheduling platform featuring real-time availability and admin controls.
-* **Focus:** Logic, Conflict Prevention, Full-stack Integration.
-* **Outcome:** Prevented double-bookings through secure backend validation.
+In order of prominence:
 
-### 4. SaaS Landing Page + Backend
-A modern startup-style marketing page integrated with a functional user dashboard.
-* **Focus:** Conversion UI, Authentication, API Endpoints.
+1. **MOSICH** — production e-commerce platform for a women's fashion brand. Built with Next.js, TypeScript, PostgreSQL (Neon), Clerk, Paystack and Vercel. Live at <https://www.mosichng.com>.
+2. **EcoStream** — a real-time intelligent streaming system that combines browser APIs and carbon-intensity data to generate adaptive video-quality recommendations.
+3. **Biometric Staff Attendance & Shift Management System** — a role-based desktop system for staff attendance and shift management, built with Java, JDBC, MySQL and DigitalPersona fingerprint integration.
+4. **Tooth Fixers** — a dental-clinic application supporting CRUD operations for patient records, with a responsive interface for staff access across devices.
 
----
+## Running locally
 
-## Key Features
-* **Fully Responsive:** Optimized for Mobile, Tablet, and Desktop views.
-* **Dedicated Project Routing:** A JavaScript-powered Single Page Application (SPA) feel that opens detailed views for every project without reloading the page.
-* **Semantic Code:** Built with accessibility and SEO in mind using proper HTML tags (`<nav>`, `<main>`, `<section>`, `<footer>`).
-* **Interactive CTA:** Integrated "Chat on WhatsApp" and Email triggers for professional networking.
+No install step is needed. Serve the folder with any static server, for example:
 
----
+```bash
+python3 -m http.server 8000
+```
 
-## Assignment Requirements Checklist
-- [x] About Me Section
-- [x] Minimum 2-3 Projects
-- [x] Project Details Page (Routing)
-- [x] Functional Call to Action (CTA)
-- [x] Responsive Design
-- [x] Live Deployment Link
-- [x] Name & Matric Number in README
+Then open <http://localhost:8000>.
 
----
-*Developed by Jesse Agu Charles-Agu - 2025*
+## Content policy
+
+The portfolio only states what can be verified. It does not include invented projects, metrics, credentials, screenshots or client claims, and missing assets are shown as clearly marked placeholders until the real files are supplied.
+
+## License
+
+Released under the [MIT License](LICENSE).

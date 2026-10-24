@@ -2,194 +2,479 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesse's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jesse Charles-Agu | Software Engineer &amp; Data Analyst</title>
+    <meta name="description" content="Portfolio of Jesse Charles-Agu, a software engineer, computer scientist and data analyst building production applications, intelligent systems and data-driven technology.">
+    <meta name="theme-color" content="#080b0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jesse Charles-Agu | Software Engineer &amp; Data Analyst">
+    <meta property="og:description" content="Portfolio of Jesse Charles-Agu, a software engineer, computer scientist and data analyst building production applications, intelligent systems and data-driven technology.">
+    <meta name="twitter:card" content="summary">
+    <!-- TODO: Add og:image (and twitter:image) once a share image is supplied. -->
+    <!-- TODO: Add <link rel="canonical"> and og:url once the production domain is confirmed. -->
+
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jesse Charles-Agu",
+        "jobTitle": "Software Engineer",
+        "description": "Software engineer, computer scientist and data analyst building production applications, intelligent systems and data-driven technology."
+    }
+    </script>
 </head>
-<body>
+<body id="top">
 
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo" onclick="showPage('home')">JACA</a>
-            <div class="nav-links">
-                <a href="#experience" onclick="showPage('home')">Experience</a>
-                <a href="#projects" onclick="showPage('home')">Works</a>
-                <a href="#contact" onclick="showPage('home')">Contact</a>
-            </div>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#home" aria-label="Jesse, back to top">JESSE<span class="logo-dot" aria-hidden="true"></span></a>
+
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#about">About</a></li>
+                    <li><a class="nav-link" href="#experience">Experience</a></li>
+                    <li><a class="nav-link" href="#projects">Projects</a></li>
+                    <li><a class="nav-link" href="#skills">Skills</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-list-cta"><a class="nav-link nav-link-cta" href="#contact">Let’s Talk <span class="arrow arrow-out" aria-hidden="true">↗</span></a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn-secondary header-cta" href="#contact">Let’s Talk <span class="arrow arrow-out" aria-hidden="true">↗</span></a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Menu</span>
+                <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span></span>
+            </button>
         </div>
-    </nav>
+    </header>
 
-    <main id="home-page">
-        <section class="hero">
-            <h1 class="reveal-text">Jesse Agu Charles-Agu</h1>
-            <p class="subtitle">Computer Science Student at Pan-Atlantic University</p>
-            <div class="intro-text">
-                <p>I am a passionate Web Developer and Cybersecurity Specialist with hands-on experience designing, building, and securing web applications. I specialize in creating responsive, user-friendly interfaces while implementing robust backend systems that are both efficient and secure. From full-stack development of SaaS platforms, booking systems, and real-time search applications to managing databases and API integrations, I focus on delivering scalable, high-performance solutions. I combine a strong understanding of cybersecurity best practices with a practical approach to problem-solving, ensuring that the applications I build are reliable, secure, and aligned with user needs. Continuously learning and adapting to new technologies, I strive to bridge the gap between complex technical systems and seamless user experiences.</p>
-            </div>
-        </section>
+    <main id="main">
 
-        <section id="experience" class="experience-section">
-            <h2 class="section-label">Professional Experience</h2>
-            
-            <div class="exp-item">
-                <div class="exp-meta"><span>June 2024</span><p>Frontend Engineering</p></div>
-                <div class="exp-content">
-                    <h3>Real-Time Search / Filter App</h3>
-                    <ul>
-                        <li>Built dynamic, real-time search interfaces with instant results as users type.</li>
-                        <li>Implemented efficient filtering and sorting for large datasets to improve UX.</li>
-                        <li>Optimized performance using debounced input and minimal DOM updates.</li>
-                        <li>Designed a responsive UI compatible with desktop and mobile devices.</li>
-                        <li>Managed project code with version control (Git/GitHub) for clean collaboration.</li>
-                    </ul>
+        <!-- ============================== HERO ============================== -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <p class="eyebrow hero-eyebrow" data-intro="0">Software Engineer · Data Analyst · Computer Scientist</p>
+
+                <h1 id="hero-title" class="hero-title">
+                    <span class="hero-line" data-intro="1">Jesse</span>
+                    <span class="hero-line" data-intro="2">Charles-<wbr>Agu<span class="accent">.</span></span>
+                </h1>
+
+                <div class="hero-lead">
+                    <p class="hero-tagline" data-intro="3">Building technology for <span class="nowrap">real-world</span> problems.</p>
+                    <div class="hero-copy" data-intro="4">
+                        <p>I’m a software engineer and computer scientist with experience building production applications, database-backed systems, intelligent computing solutions, and data-driven technology.</p>
+                        <p>I focus on turning complex problems into reliable, practical, and user-centered digital products.</p>
+                    </div>
+                    <div class="hero-actions" data-intro="5">
+                        <a class="btn btn-primary" href="#projects">View My Work <span class="arrow" aria-hidden="true">→</span></a>
+                        <!-- TODO: "Download CV ↓" is intentionally not rendered.
+                             Add it here once assets/documents/jesse-charles-agu-cv.pdf exists. -->
+                    </div>
                 </div>
-            </div>
 
-            <div class="exp-item">
-                <div class="exp-meta"><span>Seeptember 2024</span><p>Full-Stack Dev</p></div>
-                <div class="exp-content">
-                    <h3>Booking / Reservation System</h3>
-                    <ul>
-                        <li>Developed a full-stack booking system with real-time availability checking.</li>
-                        <li>Implemented user authentication and role-based access control for admins and clients.</li>
-                        <li>Designed secure forms and input validation to prevent double bookings and invalid data.</li>
-                        <li>Built an admin dashboard for viewing, approving, and managing reservations.</li>
-                        <li>Integrated a database backend (MySQL/PostgreSQL/MongoDB) to store bookings securely.</li>
-                        <li>Deployed the application to a live environment with reliable hosting and proper routing.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-meta"><span>August 2025</span><p>SaaS Architecture</p></div>
-                <div class="exp-content">
-                    <h3>SaaS Landing Page + Backend</h3>
-                    <ul>
-                        <li>Built a conversion-focused SaaS landing page with responsive design and modern UI/UX.</li>
-                        <li>Developed a backend for user management including sign-up, login, and dashboard features.</li>
-                        <li>Implemented secure authentication, password hashing, and session management.</li>
-                        <li>Integrated database storage for user accounts, subscriptions, or captured leads.</li>
-                        <li>Connected API endpoints to enable dynamic content and interactive features.</li>
-                        <li>Deployed the full-stack application, ensuring security, performance, and scalability.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-meta"><span>October 2025</span><p>HealthTech Solution</p></div>
-                <div class="exp-content">
-                    <h3>Clinic Management System</h3>
-                    <ul>
-                        <li>Developed a full-stack web application to manage patients, appointments, and medical records.</li>
-                        <li>Implemented secure user authentication for staff, doctors, and administrators with role-based access control.</li>
-                        <li>Built appointment scheduling and patient tracking with real-time availability checks.</li>
-                        <li>Integrated a database backend to store sensitive patient information securely, following data protection principles.</li>
-                        <li>Designed responsive UI/UX to ensure usability across devices for both staff and patients.</li>
-                        <li>Implemented form validation, error handling, and notifications to improve reliability and user experience.</li>
-                        <li>Deployed the application with secure hosting, proper routing, and maintainable code structure.</li>
-                    </ul>
+                <!-- Development fallback: abstract composition, NOT the final hero visual.
+                     TODO: Replace with the approved hero image (assets/images/hero/hero-workspace.webp) once supplied. -->
+                <div class="hero-visual" data-intro="visual">
+                    <div class="hv-art" data-pending-asset="hero-workspace" aria-hidden="true">
+                        <div class="hv-glow"></div>
+                        <div class="hv-grid"></div>
+                        <svg class="hv-rings" viewBox="0 0 640 640" fill="none" focusable="false">
+                            <g class="hv-lines" stroke="currentColor" stroke-width="1">
+                                <circle cx="320" cy="320" r="96"/>
+                                <circle cx="320" cy="320" r="168"/>
+                                <circle cx="320" cy="320" r="240"/>
+                                <circle cx="320" cy="320" r="312" stroke-dasharray="2 9"/>
+                                <path d="M320 8v624M8 320h624" opacity=".45"/>
+                            </g>
+                            <g class="hv-links" stroke="currentColor" stroke-width="1">
+                                <path d="M230 287 449 212 517 458 236 465 230 287ZM123 182 230 287"/>
+                            </g>
+                            <circle class="hv-node" cx="449" cy="212" r="5"/>
+                            <circle class="hv-node" cx="517" cy="458" r="5"/>
+                            <circle class="hv-node-ring" cx="230" cy="287" r="4"/>
+                            <circle class="hv-node-ring" cx="123" cy="182" r="4"/>
+                            <circle class="hv-node-ring" cx="236" cy="465" r="4"/>
+                        </svg>
+                    </div>
+                    <p class="hv-meta"><span class="status-dot" aria-hidden="true"></span>Lagos, NG</p>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="work-section">
-            <h2 class="section-label">Selected Works</h2>
-            <div class="project-grid">
-                <div class="project-card" onclick="showDetails('tooth-fixers')">
-                    <div class="image-box"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000" alt="Tooth Fixers"></div>
-                    <div class="project-info"><h3>Tooth Fixers</h3><p>Clinic Management System</p></div>
+        <!-- ========================= CAPABILITY STRIP ======================== -->
+        <section class="capabilities" aria-label="Core capabilities">
+            <div class="container">
+                <ul class="capability-list">
+                    <li class="capability">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/></svg>
+                        <span>Full-Stack Development</span>
+                    </li>
+                    <li class="capability">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 20v-7M11 20V5M17 20V10M3 20h18"/></svg>
+                        <span>Data Analysis &amp; Visualization</span>
+                    </li>
+                    <li class="capability">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+                        <span>Backend &amp; Database Systems</span>
+                    </li>
+                    <li class="capability">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="8" r="2.2"/><circle cx="9" cy="18" r="2.2"/><path d="m8.1 6.3 7.8 1.4M7.1 8l1.3 7.9M16.9 9.8l-6.2 6.6"/></svg>
+                        <span>Intelligent Computing</span>
+                    </li>
+                    <li class="capability">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.5 20 7v10l-8 4.5L4 17V7l8-4.5Z"/><path d="m4 7 8 4.5L20 7M12 11.5v10"/></svg>
+                        <span>Product-Focused Engineering</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================== ABOUT ============================== -->
+        <section id="about" class="section section-light" aria-labelledby="about-title">
+            <div class="container about-grid">
+                <div class="about-head reveal">
+                    <p class="eyebrow">About me</p>
+                    <h2 id="about-title" class="statement">
+                        <span>Curiosity.</span>
+                        <span>Discipline.</span>
+                        <span class="soft">Impact.</span>
+                    </h2>
                 </div>
-                <div class="project-card" onclick="showDetails('search-app')">
-                    <div class="image-box"><img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000" alt="Search UX"></div>
-                    <div class="project-info"><h3>QuickFilter</h3><p>Real-Time Search Interface</p></div>
+
+                <div class="about-copy reveal" data-delay="1">
+                    <p>I’m a computer scientist and software engineer interested in building technology that solves meaningful real-world problems. My experience spans production web applications, backend development, database systems, data analysis and intelligent computing.</p>
+                    <p>I enjoy understanding how systems work, turning complex ideas into practical products, and continuously developing the technical depth required to build technology that lasts.</p>
                 </div>
-                <div class="project-card" onclick="showDetails('booking-system')">
-                    <div class="image-box"><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1000" alt="Booking"></div>
-                    <div class="project-info"><h3>ReserveIt</h3><p>Booking System</p></div>
-                </div>
-                <div class="project-card" onclick="showDetails('saas-page')">
-                    <div class="image-box"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" alt="SaaS"></div>
-                    <div class="project-info"><h3>SaaS Core</h3><p>SaaS Landing Page</p></div>
+
+                <dl class="about-facts reveal" data-delay="2">
+                    <div class="fact">
+                        <dt>Education</dt>
+                        <dd><strong>B.Sc. Computer Science</strong><span>Pan-Atlantic University</span><span>2022–2026</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Engineering</dt>
+                        <dd><strong>Production &amp; Academic Systems</strong><span>Web, backend and database applications</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Data</dt>
+                        <dd><strong>Data Analytics</strong><span>Excel · SQL · Python · Power&nbsp;BI</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Focus</dt>
+                        <dd><strong>Technology Products</strong><span>Software · Data · Intelligent Systems</span></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ============================ EXPERIENCE =========================== -->
+        <section id="experience" class="section section-light section-light-alt" aria-labelledby="experience-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Experience</p>
+                    <h2 id="experience-title" class="section-title">Building beyond the classroom.</h2>
+                </header>
+
+                <ol class="experience-list">
+                    <li class="experience-item reveal">
+                        <div class="experience-meta">
+                            <p class="meta-label">Role</p>
+                            <p class="meta-value">Software Engineer / Full-Stack Developer</p>
+                            <p class="meta-label">Product</p>
+                            <p class="meta-value">Women’s fashion e-commerce platform</p>
+                            <p class="meta-label">Live site</p>
+                            <p class="meta-value"><a class="text-link" href="https://www.mosichng.com" target="_blank" rel="noopener noreferrer">mosichng.com<span class="sr-only"> (opens in a new tab)</span> <span class="arrow arrow-out" aria-hidden="true">↗</span></a></p>
+                        </div>
+
+                        <div class="experience-body">
+                            <h3 class="experience-org">MOSICH</h3>
+                            <p class="lede">Designed and developed a production e-commerce platform for a women’s fashion brand.</p>
+                            <p>Built customer and administrative functionality including product discovery, search, collections, wishlists, authentication, role-based access control, checkout, order management and shipping workflows, and took it to production deployment.</p>
+
+                            <ul class="feature-list" aria-label="MOSICH functionality">
+                                <li>Product discovery</li>
+                                <li>Search</li>
+                                <li>Collections</li>
+                                <li>Wishlists</li>
+                                <li>Authentication</li>
+                                <li>Role-based access control</li>
+                                <li>Checkout</li>
+                                <li>Order management</li>
+                                <li>Shipping workflows</li>
+                                <li>Production deployment</li>
+                            </ul>
+
+                            <ul class="tech-list" aria-label="MOSICH technologies">
+                                <li class="tech-pill">Next.js</li>
+                                <li class="tech-pill">TypeScript</li>
+                                <li class="tech-pill">PostgreSQL / Neon</li>
+                                <li class="tech-pill">Clerk</li>
+                                <li class="tech-pill">Paystack</li>
+                                <li class="tech-pill">Vercel</li>
+                            </ul>
+
+                            <div class="actions">
+                                <a class="btn btn-primary" href="#project/mosich">View Case Study <span class="arrow" aria-hidden="true">→</span></a>
+                                <a class="btn btn-secondary" href="https://www.mosichng.com" target="_blank" rel="noopener noreferrer">Visit Live Site <span class="arrow arrow-out" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- TODO: Await verified CoinCircuit internship details.
+                         Role: Backend Developer Intern. Dates, technologies, responsibilities and
+                         location / work mode have not been supplied, so no public entry is rendered. -->
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============================ PROJECTS ============================= -->
+        <section id="projects" class="section section-dark" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Featured projects</p>
+                    <h2 id="projects-title" class="section-title">Selected work. Real systems.</h2>
+                </header>
+
+                <div class="project-stack">
+
+                    <!-- 01 · MOSICH -->
+                    <article class="project project-featured reveal">
+                        <div class="project-media">
+                            <!-- TODO: Replace with real MOSICH screenshots (assets/projects/mosich/storefront.webp) when supplied. -->
+                            <div class="media-placeholder" data-pending-asset="mosich-storefront" aria-hidden="true">
+                                <span class="ph-title">MOSICH</span>
+                                <span class="ph-index">01</span>
+                                <span class="ph-note">Project imagery to be added</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-label">01 / Production Commerce</p>
+                            <h3 class="project-title">MOSICH</h3>
+                            <p class="project-subtitle">Production E-commerce Platform</p>
+                            <p class="project-desc">A modern production commerce platform for a women’s fashion brand, engineered around product discovery, secure checkout, customer accounts, order management and operational workflows.</p>
+                            <ul class="tech-list" aria-label="MOSICH technologies">
+                                <li class="tech-pill">Next.js</li>
+                                <li class="tech-pill">TypeScript</li>
+                                <li class="tech-pill">PostgreSQL</li>
+                                <li class="tech-pill">Neon</li>
+                                <li class="tech-pill">Clerk</li>
+                                <li class="tech-pill">Paystack</li>
+                                <li class="tech-pill">Vercel</li>
+                            </ul>
+                            <div class="actions">
+                                <a class="btn btn-primary project-link" href="#project/mosich" data-project-link="mosich">View Case Study <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: MOSICH</span></a>
+                                <a class="btn btn-secondary project-external" href="https://www.mosichng.com" target="_blank" rel="noopener noreferrer">Visit Live Site <span class="arrow arrow-out" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 02 · EcoStream -->
+                    <article class="project project-row reveal">
+                        <div class="project-content">
+                            <p class="project-label">02 / Intelligent Computing</p>
+                            <h3 class="project-title">EcoStream</h3>
+                            <p class="project-desc">A real-time intelligent streaming system combining browser APIs and carbon-intensity data to generate adaptive video-quality recommendations.</p>
+                            <dl class="stat-list">
+                                <div class="stat"><dt>Energy savings in testing</dt><dd>35%</dd></div>
+                                <div class="stat"><dt>CO₂ reduction per 45-minute session</dt><dd>12.5 g</dd></div>
+                            </dl>
+                            <ul class="tech-list" aria-label="EcoStream concepts">
+                                <li class="tech-pill">Reinforcement learning</li>
+                                <li class="tech-pill">Carbon-aware computing</li>
+                                <li class="tech-pill">Adaptive streaming</li>
+                                <li class="tech-pill">Optimization</li>
+                            </ul>
+                            <div class="actions">
+                                <a class="link-arrow project-link" href="#project/ecostream" data-project-link="ecostream">View Details <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: EcoStream</span></a>
+                            </div>
+                        </div>
+                        <div class="project-media">
+                            <!-- TODO: Replace with real EcoStream visuals (assets/projects/ecostream/) when supplied. -->
+                            <div class="media-placeholder" data-pending-asset="ecostream" aria-hidden="true">
+                                <span class="ph-title">EcoStream</span>
+                                <span class="ph-index">02</span>
+                                <span class="ph-note">Project imagery to be added</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 03 · Biometric Staff Attendance & Shift Management System -->
+                    <article class="project project-row is-reversed reveal">
+                        <div class="project-media">
+                            <!-- TODO: Replace with real application screenshots (assets/projects/biometric/) when supplied. -->
+                            <div class="media-placeholder" data-pending-asset="biometric" aria-hidden="true">
+                                <span class="ph-title">Biometric Attendance</span>
+                                <span class="ph-index">03</span>
+                                <span class="ph-note">Project imagery to be added</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-label">03 / Application Engineering</p>
+                            <h3 class="project-title project-title-long">Biometric Staff Attendance &amp; Shift Management System</h3>
+                            <p class="project-desc">A role-based desktop system for staff attendance and shift management with fingerprint authentication, automated attendance tracking, administrative workflows and reporting.</p>
+                            <ul class="tech-list" aria-label="Biometric system technologies">
+                                <li class="tech-pill">Java</li>
+                                <li class="tech-pill">JDBC</li>
+                                <li class="tech-pill">MySQL</li>
+                                <li class="tech-pill">DigitalPersona fingerprint integration</li>
+                            </ul>
+                            <div class="actions">
+                                <a class="link-arrow project-link" href="#project/biometric-attendance" data-project-link="biometric-attendance">View Details <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: Biometric Staff Attendance &amp; Shift Management System</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 04 · Tooth Fixers -->
+                    <article class="project project-row project-compact reveal">
+                        <div class="project-content">
+                            <p class="project-label">04 / Early Application</p>
+                            <h3 class="project-title">Tooth Fixers</h3>
+                            <p class="project-subtitle">Dental Clinic System</p>
+                            <p class="project-desc">A dental-clinic application supporting CRUD operations for patient records with a responsive interface for staff access across devices.</p>
+                            <div class="actions">
+                                <a class="link-arrow project-link" href="#project/tooth-fixers" data-project-link="tooth-fixers">View Details <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: Tooth Fixers</span></a>
+                            </div>
+                        </div>
+                        <div class="project-media">
+                            <!-- TODO: Replace with real Tooth Fixers screenshots (assets/projects/tooth-fixers/) when supplied. -->
+                            <div class="media-placeholder" data-pending-asset="tooth-fixers" aria-hidden="true">
+                                <span class="ph-title">Tooth Fixers</span>
+                                <span class="ph-index">04</span>
+                                <span class="ph-note">Project imagery to be added</span>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="footer-cta">
-            <h2>NEED HELP WITH BUILDING A PROJECT OR SECURING YOUR CYBERSPACE? CONTACT ME USING THE LINKS BELOW</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-                <a href="mailto:charlesagujesse@gmail.com" class="cta-link">charlesagujesse@gmail.com</a>
-                
-                <a href="https://wa.me/2349071512874" target="_blank" 
-                   style="background: #000; color: #fff; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; display: inline-block;">
-                   Chat on WhatsApp
-                </a>
+        <!-- ============================== SKILLS ============================= -->
+        <section id="skills" class="section section-dark section-skills" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Technical expertise</p>
+                    <h2 id="skills-title" class="section-title">The tools behind the work.</h2>
+                </header>
+
+                <div class="skills-grid reveal">
+                    <div class="skill-group">
+                        <p class="skill-index" aria-hidden="true">01</p>
+                        <h3>Software Engineering</h3>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>Java</li>
+                            <li>C++</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <p class="skill-index" aria-hidden="true">02</p>
+                        <h3>Web &amp; Application Development</h3>
+                        <ul>
+                            <li>Next.js</li>
+                            <li>React.js</li>
+                            <li>Node.js</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <p class="skill-index" aria-hidden="true">03</p>
+                        <h3>Data &amp; Databases</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                            <li>SQL</li>
+                            <li>JDBC</li>
+                            <li>Microsoft Excel</li>
+                            <li>Power BI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <p class="skill-index" aria-hidden="true">04</p>
+                        <h3>Platforms &amp; Tools</h3>
+                        <ul>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>Docker</li>
+                            <li>Vercel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================== DATA ANALYTICS ========================= -->
+        <section id="data" class="section section-light" aria-labelledby="data-title">
+            <div class="container data-grid">
+                <div class="data-copy reveal">
+                    <p class="eyebrow">Data analytics</p>
+                    <h2 id="data-title" class="section-title">Software meets data.</h2>
+                    <p>Alongside software engineering, I have trained in data analytics using Excel, SQL, Python and Power BI, developing experience working with data, exploring patterns and communicating insights through analysis and visualization.</p>
+                </div>
+                <ul class="data-tools reveal" data-delay="1" aria-label="Data analytics tools">
+                    <li><span class="tool-index" aria-hidden="true">01</span>Microsoft Excel</li>
+                    <li><span class="tool-index" aria-hidden="true">02</span>SQL</li>
+                    <li><span class="tool-index" aria-hidden="true">03</span>Python</li>
+                    <li><span class="tool-index" aria-hidden="true">04</span>Power BI</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Certifications are rendered by script.js only when the `certifications` array contains verified entries. -->
+
+        <!-- ============================== CONTACT ============================ -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <p class="eyebrow reveal">Contact</p>
+                <h2 id="contact-title" class="contact-title reveal" data-delay="1">Have something worth building<span class="accent">?</span></h2>
+                <p class="contact-copy reveal" data-delay="2">I’m always interested in meaningful technology, ambitious ideas and opportunities to build useful products.</p>
+                <a class="contact-email reveal" data-delay="2" href="mailto:charlesagujesse@gmail.com">charlesagujesse@gmail.com</a>
+                <div class="actions reveal" data-delay="3">
+                    <a class="btn btn-primary" href="mailto:charlesagujesse@gmail.com">Send an Email <span class="arrow arrow-out" aria-hidden="true">↗</span></a>
+                    <!-- TODO: Add "LinkedIn ↗" and "GitHub ↗" actions once verified profile URLs are supplied. -->
+                </div>
             </div>
         </section>
     </main>
 
-    <main id="details-page" style="display: none;">
-        <section class="details-container">
-            <button class="back-link" onclick="showPage('home')">← Back to index</button>
-            <div id="details-content"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Jesse Agu Charles-Agu — Matric: 22120612970</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-name">Jesse Charles-Agu</p>
+            <p class="footer-role">Software Engineer · Data Analyst · Computer Scientist</p>
+            <p class="footer-legal">© <span data-year>2026</span> Jesse Charles-Agu.</p>
+        </div>
     </footer>
 
-    <script>
-        const projectData = {
-            'tooth-fixers': {
-                title: "Clinic Management System",
-                problem: "Manual record-keeping resulted in data loss and scheduling conflicts at the dental clinic.",
-                features: "Secure database integration, appointment scheduling, and patient record tracking.",
-                tech: "React, Node.js, PostgreSQL.",
-                learned: "Implemented data protection principles and secure hosting for sensitive information."
-            },
-            'search-app': {
-                title: "Real-Time Search Interface",
-                problem: "Filtering large datasets was slow and lacked a modern user experience.",
-                features: "Debounced search input, instant filtering, and mobile-responsive UI.",
-                tech: "JavaScript (ES6+), HTML5, CSS Grid.",
-                learned: "Mastered performance optimization and clean UX design for dynamic data."
-            },
-            'booking-system': {
-                title: "ReserveIt Booking System",
-                problem: "Manual scheduling led to double-bookings and inefficient management.",
-                features: "Admin dashboard, role-based access, and real-time availability checks.",
-                tech: "Next.js, MongoDB, Auth.js.",
-                learned: "Handling complex backend routing and database logic."
-            },
-            'saas-page': {
-                title: "SaaS Core Landing Page",
-                problem: "Digital startups require high-performance landing pages to capture leads.",
-                features: "JWT Authentication, Lead capture forms, and interactive dashboard.",
-                tech: "Tailwind CSS, React, Express.",
-                learned: "Full-stack deployment and building conversion-focused modern UIs."
-            }
-        };
-
-        function showPage(pageId) {
-            document.getElementById('home-page').style.display = pageId === 'home' ? 'block' : 'none';
-            document.getElementById('details-page').style.display = pageId === 'details' ? 'block' : 'none';
-            window.scrollTo(0,0);
-        }
-
-        function showDetails(id) {
-            const data = projectData[id];
-            document.getElementById('details-content').innerHTML = `
-                <h1 class="details-title">${data.title}</h1>
-                <div class="details-grid">
-                    <div class="detail-item"><h3>Problem Solved</h3><p>${data.problem}</p></div>
-                    <div class="detail-item"><h3>Key Features</h3><p>${data.features}</p></div>
-                    <div class="detail-item"><h3>Tech Stack</h3><p>${data.tech}</p></div>
-                    <div class="detail-item"><h3>Outcome</h3><p>${data.learned}</p></div>
+    <!-- Project detail view: filled from script.js, opened by #project/<slug> -->
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-dialog-title">
+        <div class="dp-shell">
+            <div class="dp-bar">
+                <div class="container dp-bar-inner">
+                    <button class="dp-back" type="button" data-dialog-close><span class="arrow-back" aria-hidden="true">←</span> All projects</button>
+                    <p class="dp-bar-label" id="project-dialog-label"></p>
                 </div>
-            `;
-            showPage('details');
-        }
-    </script>
+            </div>
+            <div id="project-content"></div>
+        </div>
+    </dialog>
+
 </body>
 </html>
