@@ -308,13 +308,6 @@ button { font: inherit; color: inherit; }
     letter-spacing: .02em;
     color: var(--color-text);
 }
-.logo-dot {
-    width: .38rem;
-    height: .38rem;
-    margin-top: .6rem;
-    border-radius: 50%;
-    background: var(--color-accent);
-}
 
 .nav-list { display: flex; align-items: center; gap: clamp(1.1rem, 2.4vw, 2.4rem); }
 .nav-link {
@@ -460,7 +453,6 @@ button { font: inherit; color: inherit; }
     color: var(--color-text);
 }
 .hero-line { display: block; white-space: nowrap; }
-.hero-title .accent { color: var(--color-accent); }
 
 .hero-lead { grid-column: 1; grid-row: 3; align-self: start; max-width: 36rem; }
 .hero-tagline {
