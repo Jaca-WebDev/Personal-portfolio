@@ -474,42 +474,72 @@ button { font: inherit; color: inherit; }
 .hero-copy { margin-top: 1.25rem; display: grid; gap: .9rem; color: var(--color-text-soft); font-size: var(--font-base); max-width: 34rem; }
 .hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; }
 
-/* Abstract development fallback visual */
+/* Hero portrait: real photograph blended into the near-black hero */
 .hero-visual {
     grid-column: 2;
     grid-row: 1 / 4;
     position: relative;
     align-self: stretch;
-    min-height: clamp(26rem, 62vh, 46rem);
+    display: grid;
+    align-items: end;
+    justify-items: end;
 }
 .hv-art {
     position: absolute;
-    inset: 0;
+    inset: -4% -6% 0 -8%;
     display: grid;
     place-items: center;
-    color: rgba(255, 255, 255, .13);
-    -webkit-mask-image: radial-gradient(ellipse 72% 70% at 52% 50%, #000 38%, transparent 78%);
-    mask-image: radial-gradient(ellipse 72% 70% at 52% 50%, #000 38%, transparent 78%);
+    color: rgba(255, 255, 255, .09);
+    -webkit-mask-image: radial-gradient(ellipse 70% 66% at 54% 50%, #000 30%, transparent 76%);
+    mask-image: radial-gradient(ellipse 70% 66% at 54% 50%, #000 30%, transparent 76%);
 }
 .hv-glow {
     position: absolute;
-    inset: 8% 0 8% 8%;
+    inset: 6% 0 10% 10%;
     background:
-        radial-gradient(circle at 60% 45%, rgba(183, 255, 24, .1), transparent 38%),
-        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, .04), transparent 45%);
+        radial-gradient(circle at 62% 38%, rgba(183, 255, 24, .1), transparent 40%),
+        radial-gradient(circle at 28% 72%, rgba(255, 255, 255, .035), transparent 45%);
 }
-.hv-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
-    background-size: 56px 56px;
-}
-.hv-rings { position: relative; width: min(100%, 44rem); height: auto; aspect-ratio: 1; }
-.hv-links { opacity: .6; }
+.hv-rings { position: relative; width: min(120%, 50rem); height: auto; aspect-ratio: 1; }
+.hv-links { opacity: .5; }
 .hv-node { fill: var(--color-accent); filter: drop-shadow(0 0 8px rgba(183, 255, 24, .55)); }
 .hv-node-ring { fill: var(--color-bg); stroke: rgba(255, 255, 255, .45); }
+
+.hero-portrait {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 36rem);
+    aspect-ratio: 1 / 1.1;
+    margin: 0;
+    overflow: hidden;
+    /* Dissolve every edge into the hero background so the portrait is not a rectangle */
+    -webkit-mask-image:
+        linear-gradient(90deg, transparent 0, #000 30%, #000 90%, transparent 100%),
+        linear-gradient(180deg, transparent 0, #000 10%, #000 58%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+        linear-gradient(90deg, transparent 0, #000 30%, #000 90%, transparent 100%),
+        linear-gradient(180deg, transparent 0, #000 10%, #000 58%, transparent 100%);
+    mask-composite: intersect;
+}
+.hero-portrait-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+}
+/* Neutral near-black grade: calms the bright lobby without tinting skin or suit */
+.hero-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(8, 11, 12, .9) 0, rgba(8, 11, 12, .55) 9%, transparent 24%),
+        radial-gradient(ellipse 58% 52% at 52% 42%, transparent 0 58%, rgba(8, 11, 12, .45) 100%),
+        linear-gradient(rgba(8, 11, 12, .1), rgba(8, 11, 12, .1));
+}
 
 .hv-meta {
     position: absolute;
@@ -543,7 +573,10 @@ button { font: inherit; color: inherit; }
     .hero-title { grid-row: 2; font-size: clamp(3.3rem, 16vw, 5.5rem); }
     .hero-line { white-space: normal; }
     .hero-lead { grid-row: 3; }
-    .hero-visual { grid-column: 1; grid-row: 4; min-height: 20rem; margin-top: 1rem; }
+    .hero-visual { grid-column: 1; grid-row: 4; margin-top: .5rem; justify-items: center; }
+    /* Intentional head-and-upper-body crop: enlarge the photo inside a square frame */
+    .hero-portrait { width: 100%; aspect-ratio: 1 / 1; }
+    .hero-portrait-img { position: absolute; width: 132%; height: auto; max-width: none; left: -15%; top: -9%; }
     .hv-meta { top: auto; bottom: 0; right: auto; left: 0; }
 }
 
@@ -735,9 +768,19 @@ button { font: inherit; color: inherit; }
 
 .project-featured {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
-    min-height: 620px;
+    grid-template-columns: minmax(0, 1fr);
 }
+/* The storefront image runs full width at its real aspect ratio so no product is cropped */
+.project-featured .project-media { min-height: 0; aspect-ratio: 2400 / 1334; }
+.project-featured .project-content {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    gap: clamp(1.5rem, 4vw, 5rem);
+    align-items: start;
+    border-top: 1px solid var(--color-border-dark);
+}
+.project-head { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.project-body { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
 .project-row {
     display: grid;
     grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
@@ -795,6 +838,25 @@ button { font: inherit; color: inherit; }
 .project-media { position: relative; overflow: hidden; background: #111; min-height: 18rem; }
 .project-media > * { width: 100%; height: 100%; }
 .project-media img { object-fit: cover; transition: transform .6s var(--ease-premium); }
+
+/* Dashboard-style visuals sit in a framed stage at their own aspect ratio (never cropped) */
+.project-media.is-framed {
+    display: grid;
+    place-items: center;
+    min-height: 0;
+    padding: clamp(1.25rem, 3vw, 3rem);
+    background:
+        radial-gradient(circle at 75% 15%, rgba(183, 255, 24, .06), transparent 50%),
+        var(--color-bg-soft);
+}
+.project-media.is-framed img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    box-shadow: 0 30px 60px -28px rgba(0, 0, 0, .85);
+}
+.project-compact .project-media.is-framed { padding: clamp(1rem, 2.2vw, 2rem); }
 
 /* Stretched primary link makes the whole card clickable and keyboard reachable */
 .project-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
@@ -867,14 +929,14 @@ button { font: inherit; color: inherit; }
 .project:focus-within .project-label::before { opacity: 1; }
 
 @media (max-width: 1099.98px) {
-    .project-featured { grid-template-columns: minmax(0, 1fr); min-height: 0; }
-    .project-featured .project-media { aspect-ratio: 16 / 10; min-height: 0; }
+    .project-featured .project-content { grid-template-columns: minmax(0, 1fr); }
     .project-row, .project-row.is-reversed, .project-row.project-compact { grid-template-columns: minmax(0, 1fr); min-height: 0; }
-    .project-row .project-media { aspect-ratio: 16 / 10; min-height: 0; order: -1; }
+    .project-row .project-media { min-height: 0; order: -1; }
+    .project-row .project-media:not(.is-framed) { aspect-ratio: 16 / 10; }
 }
 @media (max-width: 599.98px) {
     .project { border-radius: 18px; }
-    .project-row .project-media, .project-featured .project-media { aspect-ratio: 4 / 3; }
+    .project-row .project-media:not(.is-framed) { aspect-ratio: 4 / 3; }
 }
 
 /* 9. Skills / Data --------------------------------------------------------- */
@@ -1082,10 +1144,13 @@ button { font: inherit; color: inherit; }
     border: 1px solid var(--color-border-dark);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    aspect-ratio: 16 / 9;
     background: var(--color-bg-elevated);
 }
-.dp-media-frame > * { width: 100%; height: 100%; object-fit: cover; }
+/* Real imagery keeps its own aspect ratio; only the no-image fallback uses a fixed ratio */
+.dp-media-frame > img { display: block; width: 100%; height: auto; }
+.dp-media-frame.is-placeholder { aspect-ratio: 16 / 9; }
+.dp-media-frame.is-placeholder > * { width: 100%; height: 100%; }
+.dp-media-frame.is-compact { max-width: 64rem; }
 
 .dp-body { padding-bottom: clamp(3rem, 6vw, 6rem); }
 .dp-section {
@@ -1138,7 +1203,8 @@ button { font: inherit; color: inherit; }
 }
 @media (max-width: 599.98px) {
     .dp-list { grid-template-columns: minmax(0, 1fr); }
-    .dp-media-frame { aspect-ratio: 4 / 3; border-radius: 18px; }
+    .dp-media-frame { border-radius: 18px; }
+    .dp-media-frame.is-placeholder { aspect-ratio: 4 / 3; }
     .dp-bar-label { display: none; }
 }
 

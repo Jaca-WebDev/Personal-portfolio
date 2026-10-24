@@ -19,6 +19,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+          href="assets/images/hero/hero-portrait-864.webp"
+          imagesrcset="assets/images/hero/hero-portrait-480.webp 480w, assets/images/hero/hero-portrait-864.webp 864w"
+          imagesizes="(max-width: 767px) 92vw, 576px">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -87,12 +91,9 @@
                     </div>
                 </div>
 
-                <!-- Development fallback: abstract composition, NOT the final hero visual.
-                     TODO: Replace with the approved hero image (assets/images/hero/hero-workspace.webp) once supplied. -->
                 <div class="hero-visual" data-intro="visual">
-                    <div class="hv-art" data-pending-asset="hero-workspace" aria-hidden="true">
+                    <div class="hv-art" aria-hidden="true">
                         <div class="hv-glow"></div>
-                        <div class="hv-grid"></div>
                         <svg class="hv-rings" viewBox="0 0 640 640" fill="none" focusable="false">
                             <g class="hv-lines" stroke="currentColor" stroke-width="1">
                                 <circle cx="320" cy="320" r="96"/>
@@ -111,6 +112,16 @@
                             <circle class="hv-node-ring" cx="236" cy="465" r="4"/>
                         </svg>
                     </div>
+                    <figure class="hero-portrait">
+                        <!-- Above the fold: eager + high priority, not lazy-loaded. -->
+                        <img class="hero-portrait-img"
+                             src="assets/images/hero/hero-portrait-864.webp"
+                             srcset="assets/images/hero/hero-portrait-480.webp 480w, assets/images/hero/hero-portrait-864.webp 864w"
+                             sizes="(max-width: 767px) 92vw, 576px"
+                             width="864" height="1152"
+                             alt="Portrait of Jesse Charles-Agu in a dark three-piece suit and tie, standing in a spacious building lobby."
+                             fetchpriority="high" decoding="async">
+                    </figure>
                     <p class="hv-meta"><span class="status-dot" aria-hidden="true"></span>Lagos, NG</p>
                 </div>
             </div>
@@ -281,30 +292,35 @@
                     <!-- 01 · MOSICH -->
                     <article class="project project-featured reveal">
                         <div class="project-media">
-                            <!-- TODO: Replace with real MOSICH screenshots (assets/projects/mosich/storefront.webp) when supplied. -->
-                            <div class="media-placeholder" data-pending-asset="mosich-storefront" aria-hidden="true">
-                                <span class="ph-title">MOSICH</span>
-                                <span class="ph-index">01</span>
-                                <span class="ph-note">Project imagery to be added</span>
-                            </div>
+                            <img class="project-img"
+                                 src="assets/projects/mosich/storefront-2400.webp"
+                                 srcset="assets/projects/mosich/storefront-1200.webp 1200w, assets/projects/mosich/storefront-2400.webp 2400w"
+                                 sizes="(min-width: 1440px) 1296px, 92vw"
+                                 width="2400" height="1334"
+                                 alt="MOSICH storefront showing the Shakara Babe Collection: three product listings with prices and colour options beneath a minimal header with menu, search, account and bag links."
+                                 loading="lazy" decoding="async">
                         </div>
                         <div class="project-content">
-                            <p class="project-label">01 / Production Commerce</p>
-                            <h3 class="project-title">MOSICH</h3>
-                            <p class="project-subtitle">Production E-commerce Platform</p>
-                            <p class="project-desc">A modern production commerce platform for a women’s fashion brand, engineered around product discovery, secure checkout, customer accounts, order management and operational workflows.</p>
-                            <ul class="tech-list" aria-label="MOSICH technologies">
-                                <li class="tech-pill">Next.js</li>
-                                <li class="tech-pill">TypeScript</li>
-                                <li class="tech-pill">PostgreSQL</li>
-                                <li class="tech-pill">Neon</li>
-                                <li class="tech-pill">Clerk</li>
-                                <li class="tech-pill">Paystack</li>
-                                <li class="tech-pill">Vercel</li>
-                            </ul>
-                            <div class="actions">
-                                <a class="btn btn-primary project-link" href="#project/mosich" data-project-link="mosich">View Case Study <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: MOSICH</span></a>
-                                <a class="btn btn-secondary project-external" href="https://www.mosichng.com" target="_blank" rel="noopener noreferrer">Visit Live Site <span class="arrow arrow-out" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                            <div class="project-head">
+                                <p class="project-label">01 / Production Commerce</p>
+                                <h3 class="project-title">MOSICH</h3>
+                                <p class="project-subtitle">Production E-commerce Platform</p>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-desc">A modern production commerce platform for a women’s fashion brand, engineered around product discovery, secure checkout, customer accounts, order management and operational workflows.</p>
+                                <ul class="tech-list" aria-label="MOSICH technologies">
+                                    <li class="tech-pill">Next.js</li>
+                                    <li class="tech-pill">TypeScript</li>
+                                    <li class="tech-pill">PostgreSQL</li>
+                                    <li class="tech-pill">Neon</li>
+                                    <li class="tech-pill">Clerk</li>
+                                    <li class="tech-pill">Paystack</li>
+                                    <li class="tech-pill">Vercel</li>
+                                </ul>
+                                <div class="actions">
+                                    <a class="btn btn-primary project-link" href="#project/mosich" data-project-link="mosich">View Case Study <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: MOSICH</span></a>
+                                    <a class="btn btn-secondary project-external" href="https://www.mosichng.com" target="_blank" rel="noopener noreferrer">Visit Live Site <span class="arrow arrow-out" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -329,25 +345,27 @@
                                 <a class="link-arrow project-link" href="#project/ecostream" data-project-link="ecostream">View Details <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: EcoStream</span></a>
                             </div>
                         </div>
-                        <div class="project-media">
-                            <!-- TODO: Replace with real EcoStream visuals (assets/projects/ecostream/) when supplied. -->
-                            <div class="media-placeholder" data-pending-asset="ecostream" aria-hidden="true">
-                                <span class="ph-title">EcoStream</span>
-                                <span class="ph-index">02</span>
-                                <span class="ph-note">Project imagery to be added</span>
-                            </div>
+                        <div class="project-media is-framed">
+                            <img class="project-img"
+                                 src="assets/projects/ecostream/dashboard-1800.webp"
+                                 srcset="assets/projects/ecostream/dashboard-900.webp 900w, assets/projects/ecostream/dashboard-1800.webp 1800w"
+                                 sizes="(min-width: 1100px) 640px, 92vw"
+                                 width="1800" height="991"
+                                 alt="EcoStream Smart Dashboard showing a real-time battery monitor, a carbon intensity tracker and manual streaming controls."
+                                 loading="lazy" decoding="async">
                         </div>
                     </article>
 
                     <!-- 03 · Biometric Staff Attendance & Shift Management System -->
                     <article class="project project-row is-reversed reveal">
-                        <div class="project-media">
-                            <!-- TODO: Replace with real application screenshots (assets/projects/biometric/) when supplied. -->
-                            <div class="media-placeholder" data-pending-asset="biometric" aria-hidden="true">
-                                <span class="ph-title">Biometric Attendance</span>
-                                <span class="ph-index">03</span>
-                                <span class="ph-note">Project imagery to be added</span>
-                            </div>
+                        <div class="project-media is-framed">
+                            <img class="project-img"
+                                 src="assets/projects/biometric/login-1586.webp"
+                                 srcset="assets/projects/biometric/login-800.webp 800w, assets/projects/biometric/login-1586.webp 1586w"
+                                 sizes="(min-width: 1100px) 700px, 92vw"
+                                 width="1586" height="992"
+                                 alt="Login screen of the PAU Attendance System with username and password fields beside a fingerprint graphic."
+                                 loading="lazy" decoding="async">
                         </div>
                         <div class="project-content">
                             <p class="project-label">03 / Application Engineering</p>
@@ -376,13 +394,14 @@
                                 <a class="link-arrow project-link" href="#project/tooth-fixers" data-project-link="tooth-fixers">View Details <span class="arrow" aria-hidden="true">→</span><span class="sr-only">: Tooth Fixers</span></a>
                             </div>
                         </div>
-                        <div class="project-media">
-                            <!-- TODO: Replace with real Tooth Fixers screenshots (assets/projects/tooth-fixers/) when supplied. -->
-                            <div class="media-placeholder" data-pending-asset="tooth-fixers" aria-hidden="true">
-                                <span class="ph-title">Tooth Fixers</span>
-                                <span class="ph-index">04</span>
-                                <span class="ph-note">Project imagery to be added</span>
-                            </div>
+                        <div class="project-media is-framed">
+                            <img class="project-img"
+                                 src="assets/projects/tooth-fixers/dashboard-1585.webp"
+                                 srcset="assets/projects/tooth-fixers/dashboard-800.webp 800w, assets/projects/tooth-fixers/dashboard-1585.webp 1585w"
+                                 sizes="(min-width: 1100px) 440px, 92vw"
+                                 width="1585" height="992"
+                                 alt="Tooth Fixers dental clinic management dashboard showing patient and appointment totals, recent appointments and quick actions."
+                                 loading="lazy" decoding="async">
                         </div>
                     </article>
 

@@ -9,7 +9,9 @@
     /* ----------------------------------------------------------------------
        Data
        Only verified information belongs here. A field that is empty or absent
-       is not rendered. `images` entries: { src, alt, width, height }.
+       is not rendered. `images` entries:
+       { src, srcset, sizes, alt, width, height }.
+       0 images -> placeholder, 1 image -> one editorial visual, 2+ -> visual + gallery.
        ---------------------------------------------------------------------- */
 
     const projects = {
@@ -22,7 +24,14 @@
             role: 'Software Engineer / Full-Stack Developer',
             stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Neon', 'Clerk', 'Paystack', 'Vercel'],
             liveUrl: 'https://www.mosichng.com',
-            images: [], // TODO: assets/projects/mosich/{storefront,product,checkout}.webp
+            images: [{
+                src: 'assets/projects/mosich/storefront-2400.webp',
+                srcset: 'assets/projects/mosich/storefront-1200.webp 1200w, assets/projects/mosich/storefront-2400.webp 2400w',
+                sizes: '(min-width: 1440px) 1296px, 92vw',
+                width: 2400,
+                height: 1334,
+                alt: 'MOSICH storefront showing the Shakara Babe Collection: three product listings with prices and colour options beneath a minimal header with menu, search, account and bag links.'
+            }],
             highlights: [],
             sections: {
                 overview: 'MOSICH is a production e-commerce platform for a women’s fashion brand. It is engineered around product discovery, secure checkout, customer accounts, order management and the operational workflows behind running the store.',
@@ -52,7 +61,14 @@
             role: '',
             stack: [],
             liveUrl: '',
-            images: [], // TODO: assets/projects/ecostream/
+            images: [{
+                src: 'assets/projects/ecostream/dashboard-1800.webp',
+                srcset: 'assets/projects/ecostream/dashboard-900.webp 900w, assets/projects/ecostream/dashboard-1800.webp 1800w',
+                sizes: '(min-width: 1440px) 1296px, 92vw',
+                width: 1800,
+                height: 991,
+                alt: 'EcoStream Smart Dashboard showing a real-time battery monitor, a carbon intensity tracker and manual streaming controls.'
+            }],
             highlights: [
                 { value: '35%', label: 'Energy savings in testing' },
                 { value: '12.5 g', label: 'CO₂ reduction per 45-minute session' }
@@ -78,7 +94,14 @@
             role: '',
             stack: ['Java', 'JDBC', 'MySQL', 'DigitalPersona fingerprint integration'],
             liveUrl: '',
-            images: [], // TODO: assets/projects/biometric/
+            images: [{
+                src: 'assets/projects/biometric/login-1586.webp',
+                srcset: 'assets/projects/biometric/login-800.webp 800w, assets/projects/biometric/login-1586.webp 1586w',
+                sizes: '(min-width: 1440px) 1296px, 92vw',
+                width: 1586,
+                height: 992,
+                alt: 'Login screen of the PAU Attendance System with username and password fields beside a fingerprint graphic.'
+            }],
             highlights: [],
             sections: {
                 overview: 'A role-based desktop system for staff attendance and shift management, with fingerprint authentication, automated attendance tracking, administrative workflows and reporting.',
@@ -107,7 +130,15 @@
             role: '',
             stack: [], // Technologies not yet verified; do not add.
             liveUrl: '',
-            images: [], // TODO: assets/projects/tooth-fixers/
+            compactMedia: true, // early project: keep the visual proportionate
+            images: [{
+                src: 'assets/projects/tooth-fixers/dashboard-1585.webp',
+                srcset: 'assets/projects/tooth-fixers/dashboard-800.webp 800w, assets/projects/tooth-fixers/dashboard-1585.webp 1585w',
+                sizes: '(min-width: 1100px) 1024px, 92vw',
+                width: 1585,
+                height: 992,
+                alt: 'Tooth Fixers dental clinic management dashboard showing patient and appointment totals, recent appointments and quick actions.'
+            }],
             highlights: [],
             sections: {
                 overview: 'A dental-clinic application supporting CRUD operations for patient records, with a responsive interface for staff access across devices.'
@@ -310,17 +341,18 @@
             el('span', { className: 'ph-note', text: 'Project imagery to be added' }));
     }
 
-    function imageNode(image) {
-        return el('img', {
-            attrs: {
-                src: image.src,
-                alt: image.alt || '',
-                width: image.width,
-                height: image.height,
-                loading: 'lazy',
-                decoding: 'async'
-            }
-        });
+    function imageNode(image, { eager = false } = {}) {
+        const attrs = {
+            src: image.src,
+            alt: image.alt || '',
+            width: image.width,
+            height: image.height,
+            loading: eager ? 'eager' : 'lazy',
+            decoding: 'async'
+        };
+        if (image.srcset) attrs.srcset = image.srcset;
+        if (image.sizes) attrs.sizes = image.sizes;
+        return el('img', { attrs });
     }
 
     function textBlock(value) {
@@ -365,8 +397,13 @@
             stats,
             meta.length ? el('dl', { className: 'dp-meta' }, meta) : null));
 
+        // One strong visual: the first image. Extra images (if any) become the gallery below.
+        const hasImage = Boolean(project.images[0]);
+        const mediaClasses = ['dp-media-frame'];
+        if (!hasImage) mediaClasses.push('is-placeholder');
+        if (project.compactMedia) mediaClasses.push('is-compact');
         const media = el('div', { className: 'dp-media' }, container(
-            el('div', { className: 'dp-media-frame' }, project.images[0] ? imageNode(project.images[0]) : placeholderMedia(project))));
+            el('div', { className: mediaClasses.join(' ') }, hasImage ? imageNode(project.images[0], { eager: true }) : placeholderMedia(project))));
 
         // Body — only verified fields render
         const body = [];

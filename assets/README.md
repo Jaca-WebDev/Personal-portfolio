@@ -1,32 +1,35 @@
 # Assets
 
-This folder holds the media the portfolio expects. Most files are **pending**: they have not been supplied yet, and the site must not substitute invented screenshots or imagery for them. Until a file exists, the site shows a clearly marked neutral placeholder.
+Media used by the portfolio. Only real material belongs here: genuine project visuals, Jesse's own photograph, or properly licensed images. Do not add AI-generated screenshots, fake interface mockups or fake code imagery.
 
-## Expected files
+## In use (optimized for the web)
 
-| Path | Purpose | Status |
-|---|---|---|
-| `images/hero/hero-workspace.webp` | Hero visual (real workspace photo, or a properly licensed image) | Pending |
-| `images/profile/jesse-charles-agu.webp` | Portrait, if used in the About section | Pending |
-| `projects/mosich/storefront.webp` | Real MOSICH screenshot: storefront | Pending |
-| `projects/mosich/product.webp` | Real MOSICH screenshot: product page | Pending |
-| `projects/mosich/checkout.webp` | Real MOSICH screenshot: checkout | Pending |
-| `projects/ecostream/` | Real EcoStream visuals | Pending |
-| `projects/biometric/` | Real application screenshots for the Biometric Staff Attendance & Shift Management System | Pending |
-| `projects/tooth-fixers/` | Real Tooth Fixers screenshots | Pending |
-| `icons/favicon.svg` | Minimal "J." favicon | Done |
-| `documents/jesse-charles-agu-cv.pdf` | CV. The Download CV button stays hidden until this file exists. | Pending |
+| File | Used for |
+|---|---|
+| `images/hero/hero-portrait-864.webp`, `hero-portrait-480.webp` | Hero portrait (not lazy-loaded; high fetch priority) |
+| `projects/mosich/storefront-2400.webp`, `storefront-1200.webp` | MOSICH cover and detail visual |
+| `projects/ecostream/dashboard-1800.webp`, `dashboard-900.webp` | EcoStream cover and detail visual |
+| `projects/biometric/login-1586.webp`, `login-800.webp` | Biometric system cover and detail visual |
+| `projects/tooth-fixers/dashboard-1585.webp`, `dashboard-800.webp` | Tooth Fixers cover and detail visual |
+| `icons/favicon.svg` | "J." favicon |
 
-## Swapping a placeholder for a real asset
+Each project currently has a single visual, so project detail pages show one editorial image and no gallery.
 
-- **Project imagery:** in `index.html` replace the project's `.media-placeholder` block with an `<img>` that has `alt`, `width`, `height` and `loading="lazy"`. Then add the file to that project's `images` array in `script.js` so the detail view uses it.
-- **Hero visual:** the abstract composition in `.hero-visual` is a development fallback. Replace `.hv-art` with the approved image.
-- **CV:** add the PDF, then add the "Download CV ↓" button where the TODO comment sits in the hero actions.
-- **LinkedIn / GitHub:** add the actions where the TODO comment sits in the contact section, once verified URLs exist.
+## Source files
 
-## Rules
+The original, full-resolution source images are kept alongside the optimized versions and are **not** referenced by the site. They are intentionally left out of version control to avoid publishing large unused files; keep them as your masters. Optimized WebP files are generated with `cwebp` (metadata stripped) at roughly quality 84–88:
 
-- Use only real material: genuine screenshots of the actual projects, or images Jesse supplies or that are properly licensed.
-- Do not add AI-generated screenshots, fake interface mockups, or fake code imagery.
-- Prefer WebP (or AVIF where practical). Keep images sized for their display dimensions.
-- The `.gitkeep` files exist only so empty folders are tracked. Delete one when its folder gets real content.
+```bash
+cwebp -q 88 -m 6 -sharp_yuv -resize 1800 0 "source.png" -o output-1800.webp
+```
+
+## Still pending
+
+| File | Notes |
+|---|---|
+| `documents/jesse-charles-agu-cv.pdf` | The Download CV button stays hidden until this exists. |
+| `images/profile/` | Intentionally empty. No separate About-section portrait is planned. |
+
+## Adding more project imagery later
+
+Add the WebP files, then add entries to that project's `images` array in `script.js`. With one image the detail view shows a single visual; with two or more it shows the first as the lead visual and the rest as a gallery. With none it falls back to the neutral placeholder. Update the card in `index.html` to match.
