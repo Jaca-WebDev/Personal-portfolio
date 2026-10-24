@@ -237,6 +237,7 @@ button { font: inherit; color: inherit; }
 
 .btn:hover .arrow, .link-arrow:hover .arrow { transform: translateX(5px); }
 .btn:hover .arrow-out, .text-link:hover .arrow-out { transform: translate(3px, -3px); }
+.btn:hover .arrow-down { transform: translateY(3px); }
 
 .link-arrow, .text-link {
     display: inline-flex;
@@ -703,14 +704,6 @@ button { font: inherit; color: inherit; }
     line-height: .95;
     letter-spacing: -.05em;
     color: var(--s-text);
-}
-.experience-heading { display: grid; gap: .6rem; }
-.experience-formerly {
-    font-size: var(--font-xs);
-    font-weight: 600;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--s-soft);
 }
 .experience-body { display: grid; gap: 1.25rem; max-width: 52rem; }
 .experience-body > p { font-size: var(--font-md); line-height: 1.55; }

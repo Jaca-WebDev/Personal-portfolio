@@ -6,7 +6,7 @@ Personal portfolio of **Jesse Charles-Agu**: Software Engineer · Data Analyst �
 
 ## Status
 
-The Hybrid Premium redesign lives on the `redesign/hybrid-premium` branch and replaces the earlier version of the site. Some assets are still pending (see [assets/README.md](assets/README.md)); until they are supplied the site shows clearly marked placeholders instead of project imagery, and the CV, LinkedIn and GitHub links are intentionally not shown.
+The Hybrid Premium redesign lives on the `redesign/hybrid-premium` branch and replaces the earlier version of the site. Asset details are in [assets/README.md](assets/README.md).
 
 ## Tech
 
@@ -30,7 +30,7 @@ A deliberately lightweight static site with no framework and no build step.
 │   ├── images/        hero and profile imagery
 │   ├── projects/      per-project screenshots
 │   ├── icons/         favicon and icons
-│   └── documents/     CV (when supplied)
+│   └── documents/     CV (Word document)
 ├── README.md
 └── LICENSE
 ```

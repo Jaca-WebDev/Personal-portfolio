@@ -12,6 +12,7 @@ Media used by the portfolio. Only real material belongs here: genuine project vi
 | `projects/biometric/login-1586.webp`, `login-800.webp` | Biometric system cover and detail visual |
 | `projects/tooth-fixers/dashboard-1585.webp`, `dashboard-800.webp` | Tooth Fixers cover and detail visual |
 | `icons/favicon.svg` | "J." favicon |
+| `documents/Jesse Charles-Agu's CV.docx` | CV, served by the hero "Download CV" button (a Word document, used as supplied) |
 
 Each project currently has a single visual, so project detail pages show one editorial image and no gallery.
 
@@ -23,11 +24,10 @@ The original, full-resolution source images are kept alongside the optimized ver
 cwebp -q 88 -m 6 -sharp_yuv -resize 1800 0 "source.png" -o output-1800.webp
 ```
 
-## Still pending
+## Intentionally empty
 
 | File | Notes |
 |---|---|
-| `documents/jesse-charles-agu-cv.pdf` | The Download CV button stays hidden until this exists. |
 | `images/profile/` | Intentionally empty. No separate About-section portrait is planned. |
 
 ## Adding more project imagery later
