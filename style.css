@@ -679,6 +679,14 @@ button { font: inherit; color: inherit; }
     letter-spacing: -.05em;
     color: var(--s-text);
 }
+.experience-heading { display: grid; gap: .6rem; }
+.experience-formerly {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--s-soft);
+}
 .experience-body { display: grid; gap: 1.25rem; max-width: 52rem; }
 .experience-body > p { font-size: var(--font-md); line-height: 1.55; }
 .experience-body .lede { color: var(--s-text); font-weight: 500; font-size: var(--font-lg); line-height: 1.2; letter-spacing: -.025em; }
@@ -701,6 +709,9 @@ button { font: inherit; color: inherit; }
     color: var(--s-text);
 }
 .feature-list li::before { content: ""; flex: none; width: 6px; height: 6px; background: var(--s-mark); }
+.feature-list.is-stacked { grid-template-columns: minmax(0, 1fr); }
+.feature-list.is-stacked li { align-items: flex-start; font-size: var(--font-base); line-height: 1.5; }
+.feature-list.is-stacked li::before { margin-top: .6em; }
 .experience-body .actions { margin-top: .75rem; }
 
 @media (max-width: 899.98px) {
