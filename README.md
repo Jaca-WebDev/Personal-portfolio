@@ -4,9 +4,9 @@ Personal portfolio of **Jesse Charles-Agu**: Software Engineer · Data Analyst �
 
 > Building technology for real-world problems.
 
-## Status
+## Live site
 
-The Hybrid Premium redesign lives on the `redesign/hybrid-premium` branch and replaces the earlier version of the site. Asset details are in [assets/README.md](assets/README.md).
+This portfolio is live at <https://jesse-portfolio-seven.vercel.app>. Asset details are in [assets/README.md](assets/README.md).
 
 ## Tech
 
@@ -35,13 +35,13 @@ A deliberately lightweight static site with no framework and no build step.
 └── LICENSE
 ```
 
-See [assets/README.md](assets/README.md) for the expected media files and their current status.
+See [assets/README.md](assets/README.md) for the media files in use and how to add more.
 
 ## Featured projects
 
 In order of prominence:
 
-1. **MOSICH** — production e-commerce platform for a women's fashion brand. Built with Next.js, TypeScript, PostgreSQL (Neon), Clerk, Paystack and Vercel. Live at <https://www.mosichng.com>.
+1. **MOSICH** — production e-commerce platform for a women’s fashion brand. Built with Next.js, TypeScript, PostgreSQL (Neon), Clerk, Paystack and Vercel. Live at <https://www.mosichng.com>.
 2. **EcoStream** — a real-time intelligent streaming system that combines browser APIs and carbon-intensity data to generate adaptive video-quality recommendations.
 3. **Biometric Staff Attendance & Shift Management System** — a role-based desktop system for staff attendance and shift management, built with Java, JDBC, MySQL and DigitalPersona fingerprint integration.
 4. **Tooth Fixers** — a dental-clinic application supporting CRUD operations for patient records, with a responsive interface for staff access across devices.
@@ -58,7 +58,7 @@ Then open <http://localhost:8000>.
 
 ## Content policy
 
-The portfolio only states what can be verified. It does not include invented projects, metrics, credentials, screenshots or client claims, and missing assets are shown as clearly marked placeholders until the real files are supplied.
+The portfolio only states what can be verified. It does not include invented projects, metrics, credentials, screenshots or client claims, and a project with no imagery falls back to a neutral placeholder until real files are supplied.
 
 ## License
 

@@ -20,7 +20,7 @@
             label: 'Production Commerce',
             title: 'MOSICH',
             subtitle: 'Production E-commerce Platform',
-            description: 'A modern production commerce platform for a women’s fashion brand, engineered around product discovery, secure checkout, customer accounts, order management and operational workflows.',
+            description: 'A modern e-commerce platform for a women’s fashion brand, engineered around product discovery, secure checkout, customer accounts, order management and operational workflows.',
             role: 'Software Engineer / Full-Stack Developer',
             stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Neon', 'Clerk', 'Paystack', 'Vercel'],
             liveUrl: 'https://www.mosichng.com',
@@ -30,12 +30,12 @@
                 sizes: '(min-width: 1440px) 1296px, 92vw',
                 width: 2400,
                 height: 1334,
-                alt: 'MOSICH storefront showing the Shakara Babe Collection: three product listings with prices and colour options beneath a minimal header with menu, search, account and bag links.'
+                alt: 'MOSICH storefront: the Shakara Babe Collection with three products, prices and color options.'
             }],
             highlights: [],
             sections: {
-                overview: 'MOSICH is a production e-commerce platform for a women’s fashion brand. It is engineered around product discovery, secure checkout, customer accounts, order management and the operational workflows behind running the store.',
-                role: 'Software Engineer / Full-Stack Developer. I designed and developed the production e-commerce platform, and built the customer and administrative functionality described below through to production deployment.',
+                overview: 'The storefront is responsive and includes product filtering, size selection, breadcrumbs and customer account flows. Payments are processed through Paystack with server-side payment verification, and the application runs in production on Vercel with a custom domain.',
+                role: 'I designed and developed the production e-commerce platform and built the customer and administrative functionality listed below, through to production deployment.',
                 engineering: [
                     'Product discovery',
                     'Search',
@@ -67,14 +67,14 @@
                 sizes: '(min-width: 1440px) 1296px, 92vw',
                 width: 1800,
                 height: 991,
-                alt: 'EcoStream Smart Dashboard showing a real-time battery monitor, a carbon intensity tracker and manual streaming controls.'
+                alt: 'EcoStream Smart Dashboard showing a real-time battery monitor, a carbon-intensity tracker and manual streaming controls.'
             }],
             highlights: [
                 { value: '35%', label: 'Energy savings in testing' },
                 { value: '12.5 g', label: 'CO₂ reduction per 45-minute session' }
             ],
             sections: {
-                overview: 'EcoStream is a real-time intelligent streaming system. It combines browser APIs and carbon-intensity data to generate adaptive video-quality recommendations.',
+                overview: 'EcoStream is a real-time intelligent streaming and monitoring system. It applies a multi-objective reinforcement-learning approach that balances quality, rebuffering, energy, carbon and pedagogy when recommending video quality for streaming sessions.',
                 engineering: [
                     'Reinforcement learning',
                     'Carbon-aware computing',
@@ -100,11 +100,10 @@
                 sizes: '(min-width: 1440px) 1296px, 92vw',
                 width: 1586,
                 height: 992,
-                alt: 'Login screen of the PAU Attendance System with username and password fields beside a fingerprint graphic.'
+                alt: 'Login screen of the Pan-Atlantic University (PAU) Attendance System with username and password fields beside a fingerprint graphic.'
             }],
             highlights: [],
             sections: {
-                overview: 'A role-based desktop system for staff attendance and shift management, with fingerprint authentication, automated attendance tracking, administrative workflows and reporting.',
                 engineering: [
                     'Fingerprint authentication',
                     'Attendance tracking',
@@ -123,7 +122,7 @@
 
         'tooth-fixers': {
             index: '04',
-            label: 'Early Application',
+            label: 'Early Project',
             title: 'Tooth Fixers',
             subtitle: 'Dental Clinic System',
             description: 'A dental-clinic application supporting CRUD operations for patient records with a responsive interface for staff access across devices.',
@@ -140,9 +139,7 @@
                 alt: 'Tooth Fixers dental clinic management dashboard showing patient and appointment totals, recent appointments and quick actions.'
             }],
             highlights: [],
-            sections: {
-                overview: 'A dental-clinic application supporting CRUD operations for patient records, with a responsive interface for staff access across devices.'
-            }
+            sections: {}
         }
     };
 
@@ -409,7 +406,7 @@
         const body = [];
         if (parts.overview) body.push(section('Overview', textBlock(parts.overview)));
         if (parts.problem) body.push(section('Problem', textBlock(parts.problem)));
-        if (parts.role) body.push(section('My Role', textBlock(parts.role)));
+        if (parts.role) body.push(section('My role', textBlock(parts.role)));
         if (parts.engineering) body.push(section('Engineering', textBlock(parts.engineering)));
         if (project.stack.length) {
             body.push(section('Technology', el('ul', { className: 'tech-list' }, project.stack.map((item) => el('li', { className: 'tech-pill', text: item })))));
@@ -433,12 +430,12 @@
             el('span', {}, el('span', { className: 'dp-next-label', text: 'Next project' }), el('span', { className: 'dp-next-title', text: next.title })),
             el('span', { className: 'arrow', text: '→', attrs: { 'aria-hidden': 'true' } }));
 
-        return [hero, media, el('div', { className: 'dp-body' }, container(body)), el('nav', { className: 'dp-next', attrs: { 'aria-label': 'Next project' } }, nextLink)];
+        return [hero, media, body.length ? el('div', { className: 'dp-body' }, container(body)) : null, el('nav', { className: 'dp-next', attrs: { 'aria-label': 'Next project' } }, nextLink)];
     }
 
     function renderProject(slug) {
         const project = projects[slug];
-        dialogContent.replaceChildren(...buildProject(slug));
+        dialogContent.replaceChildren(...buildProject(slug).filter(Boolean));
         dialogLabel.textContent = `${project.index} / ${project.label}`;
         document.title = `${project.title} | Jesse Charles-Agu`;
         dialog.scrollTop = 0;
